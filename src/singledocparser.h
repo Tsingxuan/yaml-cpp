@@ -15,7 +15,6 @@
 
 namespace YAML {
 class CollectionStack;
-template <int> class DepthGuard; // depthguard.h
 class EventHandler;
 class Node;
 class Scanner;
@@ -56,7 +55,6 @@ class SingleDocParser {
   anchor_t LookupAnchor(const Mark& mark, const std::string& name) const;
 
  private:
-  int depth = 0;
   Scanner& m_scanner;
   const Directives& m_directives;
   std::unique_ptr<CollectionStack> m_pCollectionStack;
